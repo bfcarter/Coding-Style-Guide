@@ -11,8 +11,8 @@ const sequelize = new Sequelize(config.database, config.login, config.password, 
   port: config.port,
   dialect: config.type,
   pool: {
-    max: 5,
-    min: 0,
+    max: 5,  // max of 5
+    min: 0,  //min of 0
     idle: 10000,
   },
 });

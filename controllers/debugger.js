@@ -6,9 +6,9 @@ const endOfLine = require('os').EOL;
 const controller = {};
 
 const typeToColor = {
-  error: 'red',
-  warning: 'yellow',
-  normal: 'grey',
+  error: 'red',  //error color is red
+  warning: 'yellow',  //warning is yellow
+  normal: 'grey',  // normal is grey
 };
 
 const isDebugEnv = process.env.DEBUG === 'true';
@@ -23,7 +23,7 @@ controller.debug = function (type, text) {
 
   fs.appendFile(config.logFilePath, coloredOutput + endOfLine, (err) => {
     if (err) {
-      console.log(colors[typeToColor.error](err));
+      console.log(colors[typeToColor.error](err)); // log error, warning or normal
     }
   });
 };
